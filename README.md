@@ -2,5 +2,6 @@
 Script to extract the data of the companies participating in the placement season
 
 Requires:
-BeautifulSoup https://www.crummy.com/software/BeautifulSoup/
+BeautifulSoup --> sudo apt-get install python-bs4
+
 Python2.7
