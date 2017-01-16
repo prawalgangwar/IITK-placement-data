@@ -18,7 +18,7 @@ with session() as c:
 	html = c.get(url)
 	soup = BeautifulSoup(html.content)
 	csrftoken  = soup.find("input")['value']
-	print csrftoken
+	print (csrftoken)
 	
 	payload = {
 	'action' : 'login',
@@ -35,15 +35,15 @@ with session() as c:
 
 	soup = BeautifulSoup(page.content)
 	companies = soup.find_all("a")
-	print len(companies)
+	print (len(companies))
 	i = 0;
 	for company in companies:
-		print i
+		print (i)
 		i = i+1
 		if i>10:
 			com_name = company.string	
 			com_link = 'http://placement.iitk.ac.in' + company['href']
-			print com_link
+			print (com_link)
 			page = c.get(com_link)
 			if not os.path.exists(os.path.dirname('Companies/'+ com_name + '.html')):
    				os.makedirs(os.path.dirname('Companies/'+ com_name + '.html' ))
